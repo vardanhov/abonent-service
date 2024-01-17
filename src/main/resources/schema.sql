@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS abonent_schema.sessions CASCADE;
+DROP TABLE IF EXISTS abonent_schema.sessions ;
 
-DROP TABLE IF EXISTS abonent_schema.abonentid CASCADE;
+DROP TABLE IF EXISTS abonent_schema.abonentid ;
 
-DROP EXTENSION IF EXISTS "uuid-ossp" CASCADE;
+DROP EXTENSION IF EXISTS "uuid-ossp" ;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE abonent_schema.abonentid

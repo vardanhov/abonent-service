@@ -5,7 +5,6 @@ import com.abonent.model.Sessions;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,18 +14,12 @@ import java.util.List;
 
 
 public class CSVHelper {
-    public static String TYPE = "text/csv";
 
-    public static boolean hasCSVFormat(MultipartFile file) {
-
-        if (!TYPE.equals(file.getContentType())) {
-            return false;
-        }
-
-        return true;
-    }
-
-    public static List<Sessions> csvToSessions(InputStream inputStream) {
+    /*
+     * Method converts data from csv to list of sessions
+     *
+     */
+    public static List<Sessions> convertCsvToSessions(InputStream inputStream) {
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
              CSVParser csvParser = new CSVParser(fileReader,
                      CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());) {

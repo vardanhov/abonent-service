@@ -58,3 +58,10 @@ email: “i.petrov@mail.com” <br>
 •	скрипты для сборки проекта <br>
 •	конфигурации docker-compose <br>
 •	инструкцию по сборке проекта и запуску <br>
+
+
+Технологии 
+Java 17 , Spring boot , Postgres
+
+До запуска надо создать базу abonent и схкму abonent_schema.
+Во время запуска создаются таблицы abonentid и sessions

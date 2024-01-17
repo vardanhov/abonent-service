@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 
 @RestController
@@ -25,8 +24,12 @@ public class DetailController {
         this.detailService = detailService;
     }
 
+    /*
+     * Method shows details of abonents
+     *
+     */
     @GetMapping("/showAbonents/")
-    public CompletableFuture<ResponseEntity<Map<String, Object>>> showAbonents(@RequestParam String cellId) throws ExecutionException, InterruptedException {
+    public CompletableFuture<ResponseEntity<Map<String, Object>>> showAbonents(@RequestParam String cellId) {
 
         CompletableFuture<Map<String, Object>> abonents = detailService.getAbonentsAndProfilesByCellId(cellId);
 

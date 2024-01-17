@@ -29,6 +29,11 @@ public class SessionInit {
         this.sessionsRepository = sessionsRepository;
     }
 
+
+    /*
+     * Method save sessions to database from csv file
+     *
+     */
     @PostConstruct
     public void saveSessionsCsvToDatabase() throws Exception {
 
@@ -37,7 +42,7 @@ public class SessionInit {
         FileInputStream input = new FileInputStream(file);
 
         try {
-            List<Sessions> sessions = CSVHelper.csvToSessions(input);
+            List<Sessions> sessions = CSVHelper.convertCsvToSessions(input);
             logger.info("Saving sessions into database");
             sessionsRepository.saveAll(sessions);
         } catch (Exception exception) {
